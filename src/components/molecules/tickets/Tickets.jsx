@@ -1,8 +1,9 @@
-import React, { useState, useEffect, act } from "react";
+import React, { useState} from "react";
 import styles from "./Tickets.module.css";
 import { Button } from "../../atoms/buttons/Button";
 import { useNavigate } from "react-router-dom";
 import { Input } from "../../atoms/inputs/Input";
+import {getTimeOfDateStr, getFormattedDate } from "../../../function";
 
 export const Tickets = ({ allFlightsData }) => {
   const [newTicket, setTicket] = useState({
@@ -11,35 +12,18 @@ export const Tickets = ({ allFlightsData }) => {
     email: "",
   });
 
-
-// map işleminde gelen zaman bilgisini stringe çevirdiğim fonksiyon
-  function getTimeOfDateStr(timeString) {
-    var date = new Date(timeString)
-    const formattedTime = date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
-    return formattedTime;
-  }
-  function getFormattedDate(timeStringday) {
-    const date = new Date(timeStringday);
-    const day = date.getDate(); 
-    const month = date.getMonth() + 1; 
-    const year = date.getFullYear();
-  
-    return `${day.toString().padStart(2, '0')}/${month.toString().padStart(2, '0')}/${year}`;
-  }
-
   const navigate = useNavigate();
 
 
-  const buyTicket = (e) => {
-    e.preventDefault(e);
-
-    // localStorage.getItem((newTicket));
-
-    // if (newTicket.flightName === flight.flightName) {
-    //   alert("Bu bilet zaten alınmış!");
-    //   return;
-    // }
-  
+  const buyTicket = (flightName, roughtDestinations, scheduleDateTime, actualLandingTime) => {
+    const ticketData = {
+      flightName: flightName,
+      roughtDestinations: roughtDestinations,
+      scheduleDateTime: scheduleDateTime,
+      actualLandingTime: actualLandingTime,
+    };
+ 
+    localStorage.setItem("selectedFlight", JSON.stringify(ticketData));
 
     localStorage.setItem("newTicket", JSON.stringify(newTicket));
 
@@ -56,15 +40,24 @@ export const Tickets = ({ allFlightsData }) => {
               <h5>AMS - {flight.roughtDestinations}</h5>
               <p>{getFormattedDate(flight.scheduleDateTime)}</p>
             </div>
-            <div className="d-flex mb-3">
-              <div className="col lh-sm">
+            <div className="d-flex mb-3 ">
+              <div className="col lh-sm d-flex align-items-center">
+                <div className="me-5">
                 <p>Departure</p>
                 <p>{getTimeOfDateStr(flight.scheduleDateTime)}</p>
                 <p>Airport: AMS</p>
+                </div>
+                <div className="ms-5">
+                <i className="bi bi-arrow-right"></i>
+                </div>
               </div>
-              <div className="col lh-sm">
+              <div className="col lh-sm d-flex align-items-center">
+                <div className="me-5">
                 {flight.flightName}
-             
+                </div>
+                <div className="ms-5">
+                <i className="bi bi-arrow-right"></i>
+                </div>
               </div>
               <div className="col lh-sm">
                 <p>Arrivals</p>
@@ -75,7 +68,6 @@ export const Tickets = ({ allFlightsData }) => {
               </div>
             </div>
             <div>Price: 250</div>
-            {/* <p>{flight.route?.visa}</p> */}
             <div className="position-absolute top-100 start-0">
               <Button
                 className={styles.checkButton}
@@ -102,6 +94,7 @@ export const Tickets = ({ allFlightsData }) => {
                     <form >
                       <div className="mb-3 d-flex gap-2">
                         <div>
+
                           <label htmlFor="name" className="col-form-label">Name:</label>
                           <Input type="text"
                             className="form-control"
@@ -135,7 +128,12 @@ export const Tickets = ({ allFlightsData }) => {
                         </Input>
                       </div>
                       <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button onClick={buyTicket} type="submit" data-bs-dismiss="modal" className="btn btn-primary">Buy Ticket</button>
+                      <button onClick={() => buyTicket(
+                        flight.flightName,
+                        flight.roughtDestinations,
+                        flight.scheduleDateTime,
+                        flight.actualLandingTime
+                      )} type="submit" data-bs-dismiss="modal" className="btn btn-primary">Buy Ticket</button>
                     </form>
                   </div>
 

@@ -1,44 +1,62 @@
-import React from "react";
-import  styles  from "./MyFlights.module.css";
-import { Button } from "../../atoms/buttons/Button";
+import React, { useEffect, useState } from "react";
+import styles from "./MyFlights.module.css";
+import { getFormattedDate, getTimeOfDateStr } from "../../../function";
 
 export const MyFlights = () => {
+
+  const [selectedFlight, setSelectedFlight] = useState({});
+  const scheduleDateTime = selectedFlight.scheduleDateTime
+  const actualLandingTime = selectedFlight.actualLandingTime
+
+
+  useEffect(() => {
+    const flightData = JSON.parse(localStorage.getItem("selectedFlight"));
+    if (flightData) {
+      setSelectedFlight(flightData); 
+    }
+  }, []);
+
+
   return (
     <>
-    <div>
-      <h3>My Flights</h3>
-    </div>
-    <div className={styles.ticketsBackground}>
+      <div>
+        <h3>My Flights</h3>
+      </div>
+      <div className={styles.ticketsBackground}>
           <div className={styles.ticketBackground}>
             <div className="mb-3">
-              <h5>AMS</h5>
+              <h5>AMS - {selectedFlight.roughtDestinations}</h5>
+              <p>{getFormattedDate(scheduleDateTime)}</p>
             </div>
             <div className="d-flex mb-3">
-              <div className="col lh-sm">
+              <div className="col lh-sm d-flex align-items-center">
+                <div className="me-5">
                 <p>Departure</p>
-                <p>Time </p>
+                <p>{getTimeOfDateStr(scheduleDateTime)}</p>
                 <p>Airport: AMS</p>
+                </div>
+                <div className="ms-5">
+                <i className="bi bi-arrow-right"></i>
+                </div>
               </div>
-              <div className="col lh-sm">Firma:</div>
+              
+              <div className="col lh-sm d-flex align-items-center">
+                <div className="me-5">
+                <p>{selectedFlight.flightName}</p>
+                </div>
+                <div className="ms-5">
+                <i className="bi bi-arrow-right"></i>
+                </div>
+              </div>
               <div className="col lh-sm">
                 <p>Arrivals</p>
-                {/* {formattedTime.map((e, index) => {
-                  <div key={index}>
-                     <p>{e.time}</p>
-                    </div>
-                })} */}
-                <p>Airport:</p>
+                  <p>{getTimeOfDateStr(actualLandingTime)}</p>
+                <p>Airport: {selectedFlight.roughtDestinations}</p>
               </div>
             </div>
             <div>Price: 250</div>
-            {/* <p>{flight.route?.visa}</p> */}
-            <div className="position-absolute top-100 start-0">
-              <Button
-                className={styles.checkButton}
-                text={'Check The Details'}
-              />
-            </div>
           </div>
+
       </div>
     </>
   );
