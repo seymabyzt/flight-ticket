@@ -1,6 +1,11 @@
 .ticketsBackground{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.ticketBackground{
     background-color: var(--ticket-background-color);
-    margin: 30px 10px 0 0;
+    margin: 30px 10px 10px 0;
     position: relative;
     border-radius: 10px 10px 10px 0;
     padding: 15px;

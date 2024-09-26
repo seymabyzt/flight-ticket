@@ -6,30 +6,50 @@ import { Input } from "../../atoms/inputs/Input";
 import {getTimeOfDateStr, getFormattedDate } from "../../../function";
 
 export const Tickets = ({ allFlightsData }) => {
+ 
   const [newTicket, setTicket] = useState({
     name: "",
     surname: "",
     email: "",
+
+  }); 
+  const [ticketModal, setChoosenTicketInfo] = useState({
+    flightID:"",
+    flightName:"",
+    roughtDestinations:"",
+    scheduleDateTime:"",
+    actualLandingTime:"",
   });
 
-  const navigate = useNavigate();
-
-
-  const buyTicket = (flightName, roughtDestinations, scheduleDateTime, actualLandingTime) => {
-    const ticketData = {
+  const openModel = (id, flightName, roughtDestinations, scheduleDateTime, actualLandingTime) =>{
+    const choosenTicketInfo = {
+      flightID: id,
       flightName: flightName,
       roughtDestinations: roughtDestinations,
       scheduleDateTime: scheduleDateTime,
       actualLandingTime: actualLandingTime,
-    };
- 
-    localStorage.setItem("selectedFlight", JSON.stringify(ticketData));
-
-    localStorage.setItem("newTicket", JSON.stringify(newTicket));
-
-    setTicket({ name: "", surname: "", email: ""})
-    navigate("/myflights");
+    }
+    setChoosenTicketInfo(choosenTicketInfo);
   }
+  const navigate = useNavigate();
+  const buyTicket = (id, roughtDestinations, flightName, scheduleDateTime, actualLandingTime) => {
+    const data = {
+      roughtDestinations: roughtDestinations,
+      flightName: flightName,
+      flightID: id,
+      scheduleDateTime: scheduleDateTime,
+      actualLandingTime: actualLandingTime,
+      ...newTicket
+    }
+    const savedTickets = JSON.parse(localStorage.getItem("tickets")) || [];
+
+    const updatedTickets = [...savedTickets, data];
+    
+    localStorage.setItem("tickets", JSON.stringify(updatedTickets));
+  
+    setTicket({ name: "", surname: "", email: "" });
+    navigate("/myflights");
+  };
 
   return (
     <>
@@ -78,11 +98,19 @@ export const Tickets = ({ allFlightsData }) => {
               <button
                 type="button"
                 className={styles.buyTicketButton}
-                data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap"
+                data-bs-toggle="modal" data-bs-target="#exampleModal" 
+                onClick={() => openModel(
+                 flight.id,
+                 flight.flightName,
+                 flight.roughtDestinations,
+                 flight.scheduleDateTime,
+                 flight.actualLandingTime
+                )}
               >Buy Ticket</button>
-
             </div>
-            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          </div>
+        ))}
+          <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div className="modal-dialog">
                 <div className="modal-content">
                   <div className="modal-header">
@@ -90,11 +118,13 @@ export const Tickets = ({ allFlightsData }) => {
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div className="modal-body">
-                    <p>You buy ticket from AMA to  {flight.roughtDestinations}</p>
+                    <p>You buy ticket from AMA to {ticketModal.roughtDestinations}</p>
+                    <p>Flight: {ticketModal.flightName}</p>
+                    <p>{getFormattedDate(ticketModal.scheduleDateTime)}</p>
+                    <p>{getTimeOfDateStr(ticketModal.actualLandingTime)}</p>
                     <form >
                       <div className="mb-3 d-flex gap-2">
                         <div>
-
                           <label htmlFor="name" className="col-form-label">Name:</label>
                           <Input type="text"
                             className="form-control"
@@ -129,10 +159,11 @@ export const Tickets = ({ allFlightsData }) => {
                       </div>
                       <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                       <button onClick={() => buyTicket(
-                        flight.flightName,
-                        flight.roughtDestinations,
-                        flight.scheduleDateTime,
-                        flight.actualLandingTime
+                        ticketModal.flightID,
+                         ticketModal.roughtDestinations,
+                         ticketModal.flightName,
+                         ticketModal.scheduleDateTime,
+                         ticketModal.actualLandingTime
                       )} type="submit" data-bs-dismiss="modal" className="btn btn-primary">Buy Ticket</button>
                     </form>
                   </div>
@@ -140,8 +171,6 @@ export const Tickets = ({ allFlightsData }) => {
                 </div>
               </div>
             </div>
-          </div>
-        ))}
       </div>
     </>
   );

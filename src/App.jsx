@@ -3,8 +3,6 @@ import './App.css'
 import { Navbar } from './components/organisms/Navbar/Navbar';
 import { get } from './service/Api';
 import { SideMenu } from './components/molecules/sideMenu/SideMenu';
-import { HomePage } from './components/layout/HomePage/HomePage';
-import { MyFlights } from './components/layout/MyFlights/MyFlights';
 import Router from './routes/Router';
 
 function App() {
