@@ -1,0 +1,53 @@
+.searchArea{
+    background-color: var(--ticket-background-color);
+    border-radius: 15px;
+    padding: 10px;
+}
+.roadTripButton{
+    border-radius: 20px 0 0 20px;
+    border: none;
+    background-color: var(--check-button-color);
+    color: var(--button-color);
+    padding: 7px 10px;
+}
+.oneWayButton{
+    border-radius: 0 20px 20px 0;
+    border: none;
+    background-color: var(--check-button-color);
+    color: var(--button-color);
+    padding: 7px 10px;
+}
+.oneWayButton:hover{
+    background-color: var(--button-color);
+    color: var(--check-button-color);
+}
+
+.roadTripButton:hover{
+    background-color: var(--button-color);
+    color: var(--check-button-color);
+}
+.departures{
+    border: 1px, solid var(--check-button-color);
+    outline: none;
+    border-radius: 20px 0 0 20px;
+    padding: 5px;
+}
+.arrivals{
+    border: 1px, solid var(--check-button-color);
+    outline: none;
+    border-radius:  0 20px 20px 0 ;
+    padding: 5px;
+}
+.dateInput{
+    border: 1px, solid var(--check-button-color);
+    outline: none;
+    border-radius: 20px 0 0 20px;
+    padding: 5px;
+}
+
+.dateInput1{
+    border: 1px, solid var(--check-button-color);
+    outline: none;
+    border-radius:  0 20px 20px 0 ;
+    padding: 5px;
+}

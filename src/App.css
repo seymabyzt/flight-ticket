@@ -1,0 +1,10 @@
+.app{
+    display: flex;
+    background-color: var(--background-color);
+}
+.left{
+    width: 75%;
+}
+.sideMenu{
+    width: 25%;
+}

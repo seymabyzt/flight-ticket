@@ -1,0 +1,13 @@
+.homePage{
+    background-color: var(--background-color);
+    display: flex;
+    max-height: 73vh;
+    overflow: scroll;
+}
+.homePageLeft{
+    width: 75%;
+}
+.homePageRight{
+    width: 25%;
+}
+

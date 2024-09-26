@@ -1,0 +1,16 @@
+.button{
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 0.7rem;
+}
+
+@media screen and (max-width: 450px) {
+    .button{
+        padding: 0.3rem 0.6rem;}
+}

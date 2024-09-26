@@ -1,0 +1,7 @@
+.ticketsBackground{
+    background-color: var(--ticket-background-color);
+    margin: 30px 10px 0 0;
+    position: relative;
+    border-radius: 10px 10px 10px 0;
+    padding: 15px;
+}

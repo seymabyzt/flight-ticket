@@ -1,0 +1,225 @@
+{
+  "flights": [
+    {
+      "id": "06a7",
+      "flightIndex": 1,
+      "actualLandingTime": "2024-09-25T23:45:34.000+02:00",
+      "scheduleDateTime": "2024-09-26T00:00:00.000+02:00",
+      "flightName": "HV5360",
+      "roughtDestinations": [
+        "FAO"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "9bb1",
+      "flightIndex": 2,
+      "actualLandingTime": "2024-09-25T23:45:34.000+02:00",
+      "scheduleDateTime": "2024-09-26T00:00:00.000+02:00",
+      "flightName": "KL2570",
+      "roughtDestinations": [
+        "FAO"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "c74c",
+      "flightIndex": 3,
+      "actualLandingTime": "2024-09-25T23:19:56.000+02:00",
+      "scheduleDateTime": "2024-09-26T00:05:00.000+02:00",
+      "flightName": "OR3911",
+      "roughtDestinations": [
+        "DSS",
+        "SID"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "c880",
+      "flightIndex": 5,
+      "actualLandingTime": "2024-09-26T00:03:09.000+02:00",
+      "scheduleDateTime": "2024-09-26T00:05:00.000+02:00",
+      "flightName": "KL3274",
+      "roughtDestinations": [
+        "HER"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "e9d1",
+      "flightIndex": 4,
+      "actualLandingTime": "2024-09-26T00:03:09.000+02:00",
+      "scheduleDateTime": "2024-09-26T00:05:00.000+02:00",
+      "flightName": "HV6878",
+      "roughtDestinations": [
+        "HER"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "b888",
+      "flightIndex": 7,
+      "actualLandingTime": "2024-09-26T00:13:20.000+02:00",
+      "scheduleDateTime": "2024-09-26T00:15:00.000+02:00",
+      "flightName": "HV5096",
+      "roughtDestinations": [
+        "ZTH"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "f0a0",
+      "flightIndex": 6,
+      "actualLandingTime": "2024-09-25T23:59:04.000+02:00",
+      "scheduleDateTime": "2024-09-26T00:15:00.000+02:00",
+      "flightName": "HV5586",
+      "roughtDestinations": [
+        "NCE"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "fc00",
+      "flightIndex": 8,
+      "actualLandingTime": "2024-09-26T00:46:00.000+02:00",
+      "scheduleDateTime": "2024-09-26T00:15:00.000+02:00",
+      "flightName": "HV5518",
+      "roughtDestinations": [
+        "PFO"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "6dc6",
+      "flightIndex": 9,
+      "actualLandingTime": "2024-09-26T00:25:02.000+02:00",
+      "scheduleDateTime": "2024-09-26T00:30:00.000+02:00",
+      "flightName": "OR1722",
+      "roughtDestinations": [
+        "PDL"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "de07",
+      "flightIndex": 10,
+      "actualLandingTime": "2024-09-26T00:44:00.000+02:00",
+      "scheduleDateTime": "2024-09-26T00:40:00.000+02:00",
+      "flightName": "HV6674",
+      "roughtDestinations": [
+        "TFS"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "bb29",
+      "flightIndex": 11,
+      "actualLandingTime": "2024-09-26T00:44:00.000+02:00",
+      "scheduleDateTime": "2024-09-26T00:40:00.000+02:00",
+      "flightName": "DL7514",
+      "roughtDestinations": [
+        "TFS"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "7097",
+      "flightIndex": 12,
+      "actualLandingTime": "2024-09-26T00:44:00.000+02:00",
+      "scheduleDateTime": "2024-09-26T00:40:00.000+02:00",
+      "flightName": "KL2560",
+      "roughtDestinations": [
+        "TFS"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "959f",
+      "flightIndex": 13,
+      "actualLandingTime": "2024-09-26T00:51:59.000+02:00",
+      "scheduleDateTime": "2024-09-26T00:45:00.000+02:00",
+      "flightName": "HV6642",
+      "roughtDestinations": [
+        "TBS"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "a7ab",
+      "flightIndex": 14,
+      "actualLandingTime": "2024-09-26T01:00:18.000+02:00",
+      "scheduleDateTime": "2024-09-26T00:45:00.000+02:00",
+      "flightName": "OR1186",
+      "roughtDestinations": [
+        "KGS"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "e660",
+      "flightIndex": 15,
+      "actualLandingTime": "2024-09-26T00:39:39.000+02:00",
+      "scheduleDateTime": "2024-09-26T01:00:00.000+02:00",
+      "flightName": "HV5874",
+      "roughtDestinations": [
+        "SPU"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "781d",
+      "flightIndex": 16,
+      "actualLandingTime": "2024-09-26T00:35:53.000+02:00",
+      "scheduleDateTime": "2024-09-26T01:00:00.000+02:00",
+      "flightName": "HV6888",
+      "roughtDestinations": [
+        "KEF"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "c499",
+      "flightIndex": 17,
+      "actualLandingTime": "2024-09-26T00:35:53.000+02:00",
+      "scheduleDateTime": "2024-09-26T01:00:00.000+02:00",
+      "flightName": "KL2746",
+      "roughtDestinations": [
+        "KEF"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "c73f",
+      "flightIndex": 18,
+      "actualLandingTime": "2024-09-26T01:02:30.000+02:00",
+      "scheduleDateTime": "2024-09-26T01:00:00.000+02:00",
+      "flightName": "HV5632",
+      "roughtDestinations": [
+        "PMI"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "ffa6",
+      "flightIndex": 19,
+      "actualLandingTime": "2024-09-26T01:02:30.000+02:00",
+      "scheduleDateTime": "2024-09-26T01:00:00.000+02:00",
+      "flightName": "KL3293",
+      "roughtDestinations": [
+        "PMI"
+      ],
+      "roughtEu": false
+    },
+    {
+      "id": "e3a1",
+      "flightIndex": 20,
+      "actualLandingTime": "2024-09-26T01:06:08.000+02:00",
+      "scheduleDateTime": "2024-09-26T01:00:00.000+02:00",
+      "flightName": "HV6146",
+      "roughtDestinations": [
+        "ALC"
+      ],
+      "roughtEu": false
+    }
+  ]
+}

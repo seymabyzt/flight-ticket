@@ -1,0 +1,18 @@
+.header{
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+.logo{
+    width: 7%;
+}
+.logoName{
+    text-decoration: none;
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+@media screen and (max-width: 480px) {
+    .logo{
+        width: 15%;
+    }
+}
