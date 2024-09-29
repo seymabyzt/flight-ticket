@@ -12,10 +12,11 @@ export const HomePage = ({ allFlightsData }) => {
           </div>
       <div className={styles.homePage}>
           <div className={styles.homePageLeft}>
-            <Tickets allFlightsData={allFlightsData}></Tickets>
+          <Filter></Filter>
+          
           </div>
           <div className={styles.homePageRight}>
-            <Filter></Filter>
+          <Tickets allFlightsData={allFlightsData}></Tickets>
           </div>
       </div>
     </>

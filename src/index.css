@@ -15,6 +15,7 @@
   --button-text-color: rgb(255, 255, 255);
   --ticket-background-color: rgb(255, 255, 255);
   --check-button-color: rgb(227, 222, 233);
+  --icon-color: rgb(75, 0, 150);
 }
 
 [data-theme="dark"] {
@@ -24,6 +25,7 @@
   --button-text-color: rgb(255, 255, 255);
   --ticket-background-color: rgb(255, 255, 255);
   --check-button-color: rgb(227, 222, 233);
+  --icon-color: rgb(227, 222, 233);
 }
 
 a {

@@ -5,12 +5,20 @@
 }
 .ticketBackground{
     background-color: var(--ticket-background-color);
-    margin: 30px 10px 0 0;
     position: relative;
     border-radius: 10px 10px 10px 0;
     padding: 15px;
+    margin: 30px 10px 0 0;
 }
-
+.ticketsBody{
+    display: flex;
+    margin-bottom: 15px;
+}
+.ticketsHeader{
+    display: flex;
+    margin-bottom: 15px;
+    flex-direction: column;
+}
 .checkButton{
     border: none;
     border-radius: 0 0 10px 10px;
@@ -18,10 +26,44 @@
     color: var(--button-color);
     padding: 10px;
 }
+.ticketsDepartures{
+    display: flex;
+    flex-direction: column;
+}
+.ticketsArrivals{
+    display: flex;
+    flex-direction: column;
+}
 .buyTicketButton{
     border: none;
     border-radius:10px 0 10px 0;
     background-color: var(--button-color);
     color: var(--check-button-color);
     padding: 10px;
+}
+@media screen and (max-width: 460px) {
+    .ticketBackground:first-child {
+        margin: 5px 0 0 0;
+    }
+    .ticketBackground:not(:first-child) {
+        margin: 25px 0 0 0;
+    }
+    .ticketsBody{
+        display: flex;
+        flex-direction: column;
+    }
+    .ticketsDepartures{
+        display: flex;
+        flex-direction: row;
+    }
+    .ticketsArrivals{
+        display: flex;
+        flex-direction: row;
+    }
+    .ticketsHeader{
+        margin-bottom: 5px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+  
 }

@@ -3,11 +3,26 @@
     display: flex;
     max-height: 73vh;
     overflow: scroll;
+    flex-direction: row-reverse;
 }
 .homePageLeft{
-    width: 75%;
-}
-.homePageRight{
     width: 25%;
 }
+.homePageRight{
+    width: 75%;
+}
 
+@media screen and (max-width: 460px) {
+    .homePage{
+        background-color: var(--background-color);
+        display: flex;
+        flex-direction: column;
+    }
+    .homePageLeft{
+        width: 100%;
+    }
+    .homePageRight{
+        width: 100%;
+    }
+    
+}

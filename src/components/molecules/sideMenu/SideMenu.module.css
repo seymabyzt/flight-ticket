@@ -1,0 +1,14 @@
+.sideMenu{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 460px) {
+    .sideMenu{
+        display: flex;
+        flex-direction: row;
+        margin-left: 0;
+        column-gap: 5px;
+    }
+}

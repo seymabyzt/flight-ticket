@@ -5,7 +5,6 @@ export const Button = ({ text, onClick, type, className }) => {
   return (
     <>
       <button
-    
         className={className ? className : styles.button}
         onClick={onClick}
         type={type}>

@@ -56,13 +56,13 @@ export const Tickets = ({ allFlightsData }) => {
       <div className={styles.ticketsBackground}>
         {allFlightsData?.map((flight, index) => (
           <div key={index} className={styles.ticketBackground}>
-            <div className="mb-3">
+            <div className={styles.ticketsHeader}>
               <h5>AMS - {flight.roughtDestinations}</h5>
               <p>{getFormattedDate(flight.scheduleDateTime)}</p>
             </div>
-            <div className="d-flex mb-3 ">
+            <div className={styles.ticketsBody}>
               <div className="col lh-sm d-flex align-items-center">
-                <div className="me-5">
+                <div className={styles.ticketsDepartures}>
                 <p>Departure</p>
                 <p>{getTimeOfDateStr(flight.scheduleDateTime)}</p>
                 <p>Airport: AMS</p>
@@ -79,7 +79,7 @@ export const Tickets = ({ allFlightsData }) => {
                 <i className="bi bi-arrow-right"></i>
                 </div>
               </div>
-              <div className="col lh-sm">
+              <div className={styles.ticketsArrivals}>
                 <p>Arrivals</p>
                 <div >
                   <p>{getTimeOfDateStr(flight.actualLandingTime)}</p>

@@ -19,7 +19,7 @@ useEffect(()=> {
    
   return (
     <>
-      <Navbar ></Navbar>
+      <Navbar></Navbar>
       <div className='app container-fluid'>
       <div className='left'>
       <Router allFlightsData={allFlightsData}></Router>

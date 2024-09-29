@@ -12,5 +12,7 @@
 
 @media screen and (max-width: 450px) {
     .button{
-        padding: 0.3rem 0.6rem;}
+        padding: 0.3rem 0.6rem;
+        font-size: 12px;
+    }
 }

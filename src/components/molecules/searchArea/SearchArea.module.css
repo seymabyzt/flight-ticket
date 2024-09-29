@@ -3,6 +3,11 @@
     border-radius: 15px;
     padding: 10px;
 }
+.searchAreaHeader{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
 .roadTripButton{
     border-radius: 20px 0 0 20px;
     border: none;
@@ -50,4 +55,24 @@
     outline: none;
     border-radius:  0 20px 20px 0 ;
     padding: 5px;
+}
+.searchAreaInputs{
+    display: flex;
+    margin-bottom: 15px;
+}
+@media screen and (max-width:460px) {
+    .searchAreaHeader{
+        display: flex;
+    }
+    .roadTripButton{
+        padding: 2px 6px;
+    }
+    .oneWayButton{
+        padding: 2px 6px;
+    }
+    .searchAreaInputs{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
 }

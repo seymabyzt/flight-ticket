@@ -1,10 +1,24 @@
 .app{
     display: flex;
     background-color: var(--background-color);
+    
 }
 .left{
     width: 75%;
 }
 .sideMenu{
     width: 25%;
+}
+@media screen and (max-width: 460px){
+    .app{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .left{
+        width: 100%;
+    }
+    .sideMenu{
+        width: 100%;
+    }
+
 }
